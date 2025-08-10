@@ -17,11 +17,11 @@ s3_processed_directory = "sales_data_processed/"
 
 #Database credential
 # MySQL database connection properties
-database_name = "youtube_project"
+database_name = "pyspark_project"
 url = f"jdbc:mysql://localhost:3306/{database_name}"
 properties = {
     "user": "root",
-    "password": "password",
+    "password": "root",
     "driver": "com.mysql.cj.jdbc.Driver"
 }
 
@@ -41,8 +41,12 @@ mandatory_columns = ["customer_id","store_id","product_name","sales_date","sales
 
 
 # File Download location
-local_directory = "C:\\Users\\nikita\\Documents\\data_engineering\\spark_data\\file_from_s3\\"
-customer_data_mart_local_file = "C:\\Users\\nikita\\Documents\\data_engineering\\spark_data\\customer_data_mart\\"
-sales_team_data_mart_local_file = "C:\\Users\\nikita\\Documents\\data_engineering\\spark_data\\sales_team_data_mart\\"
-sales_team_data_mart_partitioned_local_file = "C:\\Users\\nikita\\Documents\\data_engineering\\spark_data\\sales_partition_data\\"
-error_folder_path_local = "C:\\Users\\nikita\\Documents\\data_engineering\\spark_data\\error_files\\"
+local_directory = "D:\\data_engg_test\\youtube_de_project1\\S3_and_Local_Files\\Files_from_S3"
+customer_data_mart_local_file = "D:\\data_engg_test\\youtube_de_project1\\S3_and_Local_Files\\customer_data_mart"
+sales_team_data_mart_local_file = "D:\\data_engg_test\\youtube_de_project1\\S3_and_Local_Files\\sales_team_data_mart"
+sales_team_data_mart_partitioned_local_file = "D:\\data_engg_test\\youtube_de_project1\\S3_and_Local_Files\\sales_team_data_mart_partitioned"
+error_folder_path_local = "D:\\data_engg_test\\youtube_de_project1\\S3_and_Local_Files\\Error_Files"
+
+# Database tables
+db_name = "pyspark_project"
+table_name = "product_staging_table"

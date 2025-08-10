@@ -21,7 +21,7 @@ sales_persons = {
     123: [7, 8, 9]
 }
 
-file_location = "C:\\Users\\nikita\\Documents\\data_engineering\\spark_data"
+file_location = "D:\\data_engg_test\\youtube_de_project1\\S3_and_Local_Files\\Files_from_S3"
 
 if not os.path.exists(file_location):
     os.makedirs(file_location)

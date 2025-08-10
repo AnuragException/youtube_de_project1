@@ -40,8 +40,8 @@ def dimesions_table_join(final_df_to_process,
     #                          "inner").show()
 
 
-    #But i do not need all the columns so dropping it
-    #save the result into s3_customer_store_sales_df_join
+    # #But i do not need all the columns so dropping it
+    # #save the result into s3_customer_store_sales_df_join
     logger.info("Joining the s3_customer_store_df_join with sales_team_table_df ")
     s3_customer_store_sales_df_join = s3_customer_store_df_join.join(sales_team_table_df.alias("st"),
                              col("st.id")==s3_customer_store_df_join["sales_person_id"],
@@ -50,7 +50,8 @@ def dimesions_table_join(final_df_to_process,
                 .withColumn("sales_person_last_name",col("st.last_name"))\
                 .withColumn("sales_person_address",col("st.address"))\
                 .withColumn("sales_person_pincode",col("st.pincode"))\
-                .drop("id","st.first_name","st.last_name","st.address","st.pincode")
+                .drop("id", "st.first_name", "st.last_name", "st.address", "st.pincode")
+
 
     return s3_customer_store_sales_df_join
 

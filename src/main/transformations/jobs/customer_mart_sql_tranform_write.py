@@ -4,7 +4,7 @@ from resources.dev import config
 from src.main.write.database_write import DatabaseWriter
 
 #calculation for customer mart
-#find out the customer total purchase every month
+#finds out the customer total purchase every month
 #write the data into MySQL table
 def customer_mart_calculation_table_write(final_customer_data_mart_df):
     window = Window.partitionBy("customer_id","sales_date_month")
@@ -18,7 +18,7 @@ def customer_mart_calculation_table_write(final_customer_data_mart_df):
                             col("total_sales_every_month_by_each_customer").alias("total_sales"))\
                     .distinct()
 
-    #Write the Data into MySQL customers_data_mart table
+    #Write the Data into the MySQL customers_data_mart table
     db_writer = DatabaseWriter(url=config.url,properties=config.properties)
     db_writer.write_dataframe(final_customer_data_mart,config.customer_data_mart_table)
 

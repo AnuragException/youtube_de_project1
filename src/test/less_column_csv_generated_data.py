@@ -47,3 +47,4 @@ with open(csv_file_path, "w", newline="") as csvfile:
             [customer_id, product_name, sales_date.strftime("%Y-%m-%d"), sales_person_id, price, quantity, total_cost, payment_mode])
 
     print("CSV file generated successfully:", csv_file_path)
+
